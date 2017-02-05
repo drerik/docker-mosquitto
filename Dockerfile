@@ -21,7 +21,7 @@ ADD conf /etc/mosquitto
 RUN chown mosquitto:mosquitto -R /var/lib/mosquitto/
 
 RUN /sbin/ldconfig
-EXPOSE 8883
+EXPOSE 1883
 
 USER mosquitto
 RUN touch /var/lib/mosquitto/pwfile

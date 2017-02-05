@@ -8,5 +8,5 @@ docker build -t drerik/mosquitto .
 
 ## Run
 ```
-docker run -p 8883:8883 drerik/mosquitto
+docker run -p 1883:1883 drerik/mosquitto
 ```
