@@ -20,9 +20,12 @@ RUN mkdir /var/lib/mosquitto/
 ADD conf /etc/mosquitto
 RUN chown mosquitto:mosquitto -R /var/lib/mosquitto/
 
+COPY start.sh /start.sh
+RUN chmod +x /start.sh
+
 RUN /sbin/ldconfig
 EXPOSE 1883
 
 USER mosquitto
-RUN touch /var/lib/mosquitto/pwfile
-CMD ["/usr/local/sbin/mosquitto","-c","/etc/mosquitto/mosquitto.conf"]
+
+CMD ["/start.sh"]
