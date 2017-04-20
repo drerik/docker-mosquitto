@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 
 MAINTAINER Erik Kaareng-Sunde <erik@eriksunde.com>
 
@@ -11,9 +11,9 @@ RUN apt-get update ; apt-get install -y build-essential libwrap0-dev libssl-dev 
 RUN mkdir -p /srv/mosquitto/
 
 WORKDIR /srv/mosquitto
-RUN wget http://mosquitto.org/files/source/mosquitto-1.4.9.tar.gz
-RUN tar zxvf mosquitto-1.4.9.tar.gz
-RUN cd mosquitto-1.4.9 && make && make install
+RUN wget http://mosquitto.org/files/source/mosquitto-1.4.11.tar.gz
+RUN tar zxvf mosquitto-1.4.11.tar.gz
+RUN cd mosquitto-1.4.11 && make && make install
 
 RUN mkdir /var/lib/mosquitto/
 
